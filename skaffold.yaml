@@ -1,0 +1,9 @@
+apiVersion: skaffold/v1beta13
+kind: Config
+build:
+  artifacts:
+  - image: registry.gitlab.com/datacue.co/k8s-tools
+deploy:
+  kubectl:
+    manifests:
+    - cronjob.yaml
