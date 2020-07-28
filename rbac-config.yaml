@@ -3,6 +3,8 @@ kind: ServiceAccount
 metadata:
   name: k8s-tools
   namespace: default
+imagePullSecrets:
+  - name: gitlab-creds
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
