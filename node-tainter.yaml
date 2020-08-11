@@ -27,3 +27,26 @@ subjects:
   - kind: ServiceAccount
     name: k8s-tools
     namespace: default
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: node-tainter
+  namespace: default
+  labels:
+    type: cronjob
+    tech: shell
+spec:
+  schedule: "*/15 * * * *"
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 1
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: k8s-tools
+              image: registry.gitlab.com/datacue.co/k8s-tools
+          restartPolicy: OnFailure
+          serviceAccountName: k8s-tools
