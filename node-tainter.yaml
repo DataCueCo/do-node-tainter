@@ -37,7 +37,7 @@ metadata:
     type: cronjob
     tech: shell
 spec:
-  schedule: "*/15 * * * *"
+  schedule: "*/2 * * * *"
   successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1
   concurrencyPolicy: Forbid
