@@ -4,7 +4,7 @@ Currently, it is not possible to taint new nodes in a node pool automatically. D
 
 # Quick start
 
-First modify these two files to fit what you need:
+First modify these three files to fit what your k8s cluster:
 
 1. `cronjob.yaml` - adjust the frequency as you like, it's currently set to run every 15 mins.
 2. `taint-nodes.sh` - change the node pool names and change the taint to what you need.
